@@ -11,7 +11,8 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 import static org.testng.Assert.assertTrue;
 import static org.testng.AssertJUnit.assertEquals;
@@ -46,7 +47,7 @@ public class AddSteps {
         //navigate to Add Page
         addPage = homePage.clickAddNewComputer();
     }
-
+/*
     @When("^I fill in (.*),(.*),(.*),(.*) and submit$")
     public void i_fill_in_and_submit(String name, String introducedDate,
                     String discontinuedDate, String company ) throws Throwable {
@@ -66,16 +67,44 @@ public class AddSteps {
         addPage.fillCompany(company);
         compMap.put("company",company);
         addPage.clickSubmit();
+    } */
+
+    @When("^I fill in (.*) for name,(.*) for introducedDate,(.*) for discontinuedDate,(.*) for company and submit$")
+    public void i_fill_in_and_submit(String name, String introducedDate,
+                                     String discontinuedDate, String company) throws Throwable {
+        //as system allows duplicates all pre-existing matching entries are deleted
+        //as part of test setup
+        homePage.visitPage();
+        homePage.deleteMatchingEntries(name);
+        //fill in form
+        homePage.visitPage();
+        addPage = homePage.clickAddNewComputer();
+        addPage.fillName(name);
+        compMap.put("name", name);
+        addPage.fillIntroducedDate(introducedDate);
+        compMap.put("introducedDate", introducedDate);
+        addPage.fillDiscontinuedDate(discontinuedDate);
+        compMap.put("discontinuedDate", discontinuedDate);
+        addPage.fillCompany(company);
+        compMap.put("company", company);
+        addPage.clickSubmit();
     }
+
 
     @Then("^I should see a success message$")
     public void i_should_see_a_success_message(String msg) throws Throwable {
         assertEquals(msg, homePage.getMessage());
     }
 
-    @When("^I do not fill in (.*) and submit$")
-    public void i_do_not_fill_in_and_submit(String name ) throws Throwable {
+    @When("^I fill in empty sapce (.*) for name and submit$")
+    public void i_fill_in_empty_sapce_for_name_and_submit(String name) throws Throwable {
         addPage.fillName(name);
+        addPage.clickSubmitExpectingError();
+    }
+
+    @When("^I do not fill in name and submit$")
+    public void i_do_not_fill_in_and_submit() throws Throwable {
+        //addPage.fillName(name);
         addPage.clickSubmitExpectingError();
     }
 
@@ -117,7 +146,7 @@ public class AddSteps {
             assertTrue(editPage.compareToFormValues(compMap));
         }
         else Assert.fail();
-
     }
+
 
 }

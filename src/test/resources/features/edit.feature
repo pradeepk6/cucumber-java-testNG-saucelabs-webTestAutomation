@@ -3,6 +3,9 @@
     Once a computer has been added with valid details searching for the added computer
     and locating it and clicking it should take to a details page where an edit form is
     displayed with details of the computer prepopulated.Read feature is also covered.
+    Test Setup:
+    As the system allows duplicates a helper method deletes all matching entries before
+    adding as part of test setup
 
   Scenario: Edit computer details
     Given I add a computer with details

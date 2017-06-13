@@ -4,7 +4,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions(
-        tags = {"@edit,@add,@delete"},
+        tags = {"@add,@delete,@edit"},
         features = "src/test/resources/features",
         glue = "com.mycompany.computerdb.steps",
         monochrome = true,
