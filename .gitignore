@@ -35,7 +35,6 @@
 # Maven #
 #########
 /target/
-!/target/cucumber/
 
 # Other IDE's#
 ##############

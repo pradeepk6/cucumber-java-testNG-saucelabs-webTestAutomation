@@ -20,6 +20,8 @@ Code sample of web test-automation with Cucumber using:
   systemPropertyVariable 'webdriver.chrome.driver' is already set in pom.xml.Download the latest
   chrome driver binary into /src/test/drivers directory and change browser choice in pom.xml to
   chrome or pass in relevant argumetns via maven commandline
+* to run: download the project and run maven comman: mvn verify 
+  and see cucumber reports in 'target/cucumber' directory
   
   
 
