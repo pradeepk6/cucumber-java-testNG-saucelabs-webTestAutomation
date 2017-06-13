@@ -7,8 +7,8 @@ Code sample of web test-automation with Cucumber using:
 * Maven 3.3.9
 * SauceLabs(work in progress)
 
-##### Test Cases:
-* [Cucumber feature files should serve as Test Cases](/src/test/resources/features)
+##### Test Cases: Cucumber feature files should serve as Test Cases.Click below link:
+* [Cucumber feature files](/src/test/resources/features)
 * Once you run the proram see cucumber reports in target directory to see more colourful TestCases
 
 ##### tested on:
