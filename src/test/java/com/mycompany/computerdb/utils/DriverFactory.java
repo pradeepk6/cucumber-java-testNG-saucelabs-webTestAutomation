@@ -1,6 +1,5 @@
 package com.mycompany.computerdb.utils;
 
-import cucumber.api.Scenario;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,11 +7,9 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
@@ -26,17 +23,14 @@ import java.util.concurrent.TimeUnit;
  */
 @Configuration
 public class DriverFactory {
-    private static String browser;
-    private static WebDriver driver;
-    //@Autowired
-    //private static Scenario scenario;
-
     //SauceLabs fields
     public static final String USERNAME = System.getenv("SAUCE_USERNAME");
     public static final String ACCESS_KEY = System.getenv("SAUCE_ACCESS_KEY");
     public static final String URL = "https://" + USERNAME + ":" + ACCESS_KEY + "@ondemand.saucelabs.com:443/wd/hub";
     public static String sessionId;
     public static String jobName;
+    private static String browser;
+    private static WebDriver driver;
 
     @Bean
     @Scope("cucumber-glue")
