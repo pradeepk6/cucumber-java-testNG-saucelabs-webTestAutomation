@@ -105,8 +105,8 @@
               </includes>
               <environmentVariables>
                 <!-- below options are used for SauceLabs option-->
-                <SAUCE_USERNAME>pradeepk6</SAUCE_USERNAME>
-                <SAUCE_ACCESS_KEY>af16a921-c03a-454b-906f-bec717e79c33</SAUCE_ACCESS_KEY>
+                <SAUCE_USERNAME></SAUCE_USERNAME>
+                <SAUCE_ACCESS_KEY></SAUCE_ACCESS_KEY>
                 <platform>windows 10</platform>
                 <browserName>chrome</browserName>
                 <browserVersion>latest</browserVersion>

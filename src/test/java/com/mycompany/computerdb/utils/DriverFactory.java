@@ -10,10 +10,6 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Scope;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -22,7 +18,6 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by user
  */
-@Configuration
 public class DriverFactory {
     //SauceLabs fields
     public static final String USERNAME = System.getenv("SAUCE_USERNAME");
@@ -36,9 +31,6 @@ public class DriverFactory {
     public DriverFactory() {
     }
 
-    @Lazy
-    @Bean
-    @Scope("cucumber-glue")
     public static EventFiringWebDriver eventFiringWebDriver() {
         //System.out.println("DriverFactory.webDriver");
         if (browser == null) browser = getBrowser();
