@@ -1,6 +1,6 @@
 ##### About:
 Code sample for test-automation of website: 
-www.computer-database.herokuapp.com/computers
+http://computer-database.herokuapp.com/computers
 
 The project is built using the following:
 * Java 1.8
