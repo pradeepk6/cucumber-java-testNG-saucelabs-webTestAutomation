@@ -7,7 +7,7 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
 
@@ -21,15 +21,18 @@ import static org.testng.AssertJUnit.assertEquals;
 /**
  * Created by user
  */
+//@ContextConfiguration("/cucumber.xml")
 public class AddSteps {
 
+
     @Autowired
-    EventFiringWebDriver driver;
+    WebDriver driver;
 
     HomePage homePage;
     AddPage addPage;
     EditPage editPage;
     Map<String,String> compMap = new HashMap<>();
+
 
     public AddSteps() {
     }
@@ -47,27 +50,6 @@ public class AddSteps {
         //navigate to Add Page
         addPage = homePage.clickAddNewComputer();
     }
-/*
-    @When("^I fill in (.*),(.*),(.*),(.*) and submit$")
-    public void i_fill_in_and_submit(String name, String introducedDate,
-                    String discontinuedDate, String company ) throws Throwable {
-        //as system allows duplicates all pre-existing matching entries are deleted
-        //as part of test setup
-        homePage.visitPage();
-        homePage.deleteMatchingEntries(name);
-        //fill in form
-        homePage.visitPage();
-        addPage = homePage.clickAddNewComputer();
-        addPage.fillName(name);
-        compMap.put("name",name);
-        addPage.fillIntroducedDate(introducedDate);
-        compMap.put("introducedDate",introducedDate);
-        addPage.fillDiscontinuedDate(discontinuedDate);
-        compMap.put("discontinuedDate",discontinuedDate);
-        addPage.fillCompany(company);
-        compMap.put("company",company);
-        addPage.clickSubmit();
-    } */
 
     @When("^I fill in (.*) for name,(.*) for introducedDate,(.*) for discontinuedDate,(.*) for company and submit$")
     public void i_fill_in_and_submit(String name, String introducedDate,
@@ -147,6 +129,4 @@ public class AddSteps {
         }
         else Assert.fail();
     }
-
-
 }

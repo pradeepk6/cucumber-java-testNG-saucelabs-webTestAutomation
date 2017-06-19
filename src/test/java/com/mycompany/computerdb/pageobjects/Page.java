@@ -6,7 +6,6 @@ package com.mycompany.computerdb.pageobjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 
@@ -15,11 +14,11 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
  */
 public abstract class Page {
 
-    protected EventFiringWebDriver driver;
+    protected WebDriver driver;
 
     //String baseurl = "http://computer-database.herokuapp.com/computers";
 
-    public Page(EventFiringWebDriver driver) {
+    public Page(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
     }

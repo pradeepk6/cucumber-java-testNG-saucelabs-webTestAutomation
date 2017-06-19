@@ -104,8 +104,15 @@
                 <include>**/*AT.class</include>
               </includes>
               <environmentVariables>
+                <!-- below options are used for SauceLabs option-->
+                <SAUCE_USERNAME>pradeepk6</SAUCE_USERNAME>
+                <SAUCE_ACCESS_KEY>af16a921-c03a-454b-906f-bec717e79c33</SAUCE_ACCESS_KEY>
+                <platform>windows 10</platform>
+                <browserName>chrome</browserName>
+                <browserVersion>latest</browserVersion>
               </environmentVariables>
               <systemPropertyVariables>
+                <!-- below options are used for local testing -->
                 <browser>${browser}</browser>
                 <webdriver.chrome.driver>${project.basedir}/src/test/drivers/chromedriver.exe
                 </webdriver.chrome.driver>

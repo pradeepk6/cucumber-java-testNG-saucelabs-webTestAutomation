@@ -9,4 +9,10 @@
 
     <context:annotation-config/>
     <context:component-scan base-package="com.mycompany.computerdb"/>
+    <!--
+    <bean class="com.mycompany.computerdb.utils.DriverFactory"
+          factory-method="webDriver"
+           lazy-init="true" scope="cucumber-glue" />
+     -->
+
 </beans>

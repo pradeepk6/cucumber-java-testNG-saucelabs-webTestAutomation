@@ -1,17 +1,15 @@
 package com.mycompany.computerdb.pageobjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -44,7 +42,7 @@ public class EditPage extends Page {
     @FindBy(how = How.XPATH, using = "//*[@id=\"main\"]/form[2]/input")
     public WebElement delete_submit;
 
-    public EditPage(EventFiringWebDriver driver) {
+    public EditPage(WebDriver driver) {
         super(driver);
     }
 

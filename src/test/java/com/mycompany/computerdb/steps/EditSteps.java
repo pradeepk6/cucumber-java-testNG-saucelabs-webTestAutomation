@@ -3,14 +3,11 @@ package com.mycompany.computerdb.steps;
 import com.mycompany.computerdb.pageobjects.AddPage;
 import com.mycompany.computerdb.pageobjects.EditPage;
 import com.mycompany.computerdb.pageobjects.HomePage;
-import com.mycompany.computerdb.pageobjects.Page;
-import cucumber.api.DataTable;
-import cucumber.api.PendingException;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
 
@@ -26,7 +23,7 @@ import static org.testng.Assert.assertTrue;
 public class EditSteps {
 
     @Autowired
-    EventFiringWebDriver driver;
+    WebDriver driver;
 
     HomePage homePage;
     AddPage addPage;

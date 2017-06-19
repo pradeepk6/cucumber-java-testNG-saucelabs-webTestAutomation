@@ -1,4 +1,4 @@
-@add
+
 Feature: Create computer
   Add a new computer entry with valid details.
   Validation:
@@ -13,6 +13,7 @@ Feature: Create computer
   Background:
     Given I am on Home page
 
+  @add
   Scenario Outline: Add a new computer successfully
     When I fill in <name> for name,<introducedDate> for introducedDate,<discontinuedDate> for discontinuedDate,<company> for company and submit
     Then I should see a success message
@@ -26,6 +27,7 @@ Feature: Create computer
       | deep_mind2.5# |                |                  |         |
 
   #using 'Scenario Outline' here means less coding if spec changes in future
+
   Scenario Outline: 'Add new computer' fails as name field is Required
     When I fill in empty sapce <name> for name and submit
     Then I should see Required validation failure

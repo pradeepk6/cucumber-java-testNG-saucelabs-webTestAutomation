@@ -27,6 +27,7 @@ public class SauceUtils {
         Map<String, Object> updates = new HashMap<String, Object>();
         addBuildNumberToUpdate(updates);
         updates.put("passed", testResults);
+        System.out.println("testResults = " + testResults);
         client.updateJobInfo(sessionId, updates);
     }
     /**
